@@ -10,6 +10,7 @@ def parallel_processing(n, m, data):
     
     i=0
     while i<m:
+        minTime = min(threads)
         
         i+=1
 
