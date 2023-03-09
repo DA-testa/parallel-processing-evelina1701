@@ -57,7 +57,7 @@ def main():
     
     # TODO: print out the results, each pair in it's own line
     for i in range(result):
-        print(result[i]"\n")
+        print(result[i],"\n")
 
 
 if __name__ == "__main__":
