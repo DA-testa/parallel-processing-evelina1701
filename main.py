@@ -8,11 +8,21 @@ def parallel_processing(n, m, data):
     for k in range(n):
         threads.append(0)
     
-    i=0
-    while i<m:
-        minTime = min(threads)
-        
-        i+=1
+    k=0
+    l=1
+    while k<m:
+        minTime = threads[0]
+        index = 0
+        while l<n:
+            if threads[l]<minTime:
+                minTime = threads[l]
+                index = l
+            l+=1
+        k+=1
+
+    begin = treads[index]
+    threads[index] += data[i]
+    output.append((index,begin))
 
     return output
 
@@ -24,16 +34,30 @@ def main():
     # m - job count
     n = 0
     m = 0
-
     # second line - data 
     # data - contains m integers t(i) - the times in seconds it takes any thread to process i-th job
     data = []
+    letter = input()
+   
+    if "I" in letter:
+        n = int(input())
+        m = int(input())
+        data = list(map(int, input().split())) 
+
+    assert n>=1 and n<=105
+    assert m>=1 and m<=105 
+    assert len(data) == m
+    for i in range(m):
+        assert data[i]>=0 and data<=109
+
+    
 
     # TODO: create the function
     result = parallel_processing(n,m,data)
     
     # TODO: print out the results, each pair in it's own line
-
+    for i in range(result):
+        print(result[i]"\n")
 
 
 if __name__ == "__main__":
