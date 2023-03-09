@@ -44,11 +44,14 @@ def main():
         m = int(input())
         data = list(map(int, input().split())) 
 
-    assert n>=1 and n<=105
-    assert m>=1 and m<=105 
+    assert n>=1
+    assert n<=105
+    assert m>=1
+    assert m<=105 
     assert len(data) == m
     for i in range(m):
-        assert data[i]>=0 and data<=109
+        assert data[i]>=0
+        assert data[i]<=109
 
     
 
