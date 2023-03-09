@@ -9,21 +9,20 @@ def parallel_processing(n, m, data):
         threads.append(0)
     
     k=0
-    l=1
     while k<m:
         minTime = threads[0]
         index = 0
+        l=1
         while l<n:
             if threads[l]<minTime:
                 minTime = threads[l]
                 index = l
-            l+=1
-        k+=1
+        
 
         begin = threads[index]
-        threads[index] += data[i]
+        threads[index] += data[k]
         output.append((index,begin))
-
+        k+=1
     return output
 
 def main():
