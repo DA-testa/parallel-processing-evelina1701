@@ -20,7 +20,7 @@ def parallel_processing(n, m, data):
             l+=1
         k+=1
 
-    begin = treads[index]
+    begin = threads[index]
     threads[index] += data[i]
     output.append((index,begin))
 
