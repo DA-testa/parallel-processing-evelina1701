@@ -17,7 +17,7 @@ def parallel_processing(n, m, data):
             if threads[l]<minTime:
                 minTime = threads[l]
                 index = l
-        
+            l+=1
 
         begin = threads[index]
         threads[index] += data[k]
@@ -39,10 +39,9 @@ def main():
     letter = input()
    
     if "I" in letter:
-        n = int(input())
+        n, m = map(int, input().split())
         assert n>=1
         assert n<=105
-        m = int(input())
         assert m>=1
         assert m<=105 
         data = list(map(int, input().split())) 
