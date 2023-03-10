@@ -56,7 +56,6 @@ def main():
     # TODO: print out the results, each pair in it's own line
     for i in range(len(result)):
         print(result[i][0],result[i][1])
-        print()
 
 
 if __name__ == "__main__":
