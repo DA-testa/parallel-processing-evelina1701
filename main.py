@@ -4,7 +4,7 @@ def parallel_processing(n, m, data):
     output = []
     # TODO: write the function for simulating parallel tasks, 
     # create the output pairs
-    tiek izveidots masīvs ar threads, kurš pagaidām ir aizpildīts ar nullēm
+    #tiek izveidots masīvs ar threads, kurš pagaidām ir aizpildīts ar nullēm
     threads = []
     for k in range(n):
         threads.append(0)
