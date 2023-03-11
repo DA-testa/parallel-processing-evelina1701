@@ -4,12 +4,14 @@ def parallel_processing(n, m, data):
     output = []
     # TODO: write the function for simulating parallel tasks, 
     # create the output pairs
+    tiek izveidots masīvs ar threads, kurš pagaidām ir aizpildīts ar nullēm
     threads = []
     for k in range(n):
         threads.append(0)
     
     k=0
     while k<m:
+        #tiek paņemts pirmais threads elements un tiek salīdzināts ar citiem, lai atrastu thread ar mazāko vērtību
         minTime = threads[0]
         index = 0
         l=1
@@ -18,7 +20,7 @@ def parallel_processing(n, m, data):
                 minTime = threads[l]
                 index = l
             l+=1
-
+        
         begin = threads[index]
         threads[index] += data[k]
         output.append((index,begin))
