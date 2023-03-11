@@ -20,7 +20,7 @@ def parallel_processing(n, m, data):
                 minTime = threads[l]
                 index = l
             l+=1
-        
+
         begin = threads[index]
         threads[index] += data[k]
         output.append((index,begin))
@@ -38,19 +38,19 @@ def main():
     # second line - data 
     # data - contains m integers t(i) - the times in seconds it takes any thread to process i-th job
     data = []
-    letter = input()
+    #letter = input()
    
-    if "I" in letter:
-        n, m = map(int, input().split())
-        assert n>=1
-        assert n<=105
-        assert m>=1
-        assert m<=105 
-        data = list(map(int, input().split())) 
-        assert len(data) == m
-        for i in range(m):
-            assert data[i]>=0
-            assert data[i]<=109
+    #if "I" in letter:
+    n, m = map(int, input().split())
+    assert n>=1
+    assert n<=105
+    assert m>=1
+    assert m<=105 
+    data = list(map(int, input().split())) 
+    assert len(data) == m
+    for i in range(m):
+        assert data[i]>=0
+        assert data[i]<=109
     
     # TODO: create the function
     result = parallel_processing(n,m,data)
