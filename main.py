@@ -6,8 +6,16 @@ def parallel_processing(n, m, data):
     # create the output pairs
     #tiek izveidots masīvs ar threads, kurš pagaidām ir aizpildīts ar nullēm
     threads = []
+    beginArr = []
+    threadIndex = []
     for k in range(n):
         threads.append(0)
+
+    for k in range(m):
+        beginArr.append(0)
+
+    for k in range(m):
+        threadIndex.append(0)
     
     k=0
     while k<m:
@@ -21,10 +29,14 @@ def parallel_processing(n, m, data):
                 index = l
             l+=1
         
-        begin = threads[index]
+        beginArr.append(threads[index])
+        threadIndex.append(index)
         threads[index] += data[k]
-        output.append((index,begin))
+        #output.append((index,begin))
         k+=1
+
+    for k in range(m):
+        output.append((threadIndex[k],beginArr[k]))
     return output
 
 def main():
